@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const sequelize = new Sequelize(
+/**
+ * const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
@@ -15,5 +16,23 @@ const sequelize = new Sequelize(
     logging: false, // desactiva logs SQL
   }
 );
+ * 
+ */
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  protocol: 'postgres',
+  logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+}
+
+)
+
+
 
 export default sequelize;
