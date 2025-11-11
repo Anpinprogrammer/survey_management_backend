@@ -15,3 +15,10 @@ POST   /api/auth/logout            - Cerrar sesión
 GET    /api/auth/me                - Obtener usuario actual
 POST   /api/auth/change-password   - Cambiar contraseña
 ```
+### Google OAuth
+
+```
+GET    /api/google/auth-url        - Obtener URL de autorización
+POST   /api/google/callback        - Callback de autorización
+DELETE /api/google/disconnect      - Desconectar cuenta de Google
+```
