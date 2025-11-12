@@ -10,7 +10,7 @@ URL Base = https://survey-management-backend.onrender.com
 ```
 ## POST   /api/auth/register          - Registrar nuevo usuario
 
-Ejemplo:
+Test:
 
 {
     "email" : "correo@correo.com",
@@ -21,10 +21,10 @@ Ejemplo:
 
 ## POST   /api/auth/login             - Iniciar sesión
 
-Ejemplo: 
+Test: 
 
 {
-    "email": "correo@correo.com",
+    "email": "anpingom@demo.com",
     "password" : "Admin123!"
 }
 
@@ -42,17 +42,27 @@ Ejemplo:
 
 ## POST   /api/auth/logout            - Cerrar sesión
 
-Ejemplo:
+Test:
 
 {
-    "refreshToken" : "Recibe el token mas actualizado"
+    "refreshToken" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhOWVlNmVjNC0yOGYzLTRlNTgtYTBjNi1kYWIzOGVmZjU2YjgiLCJlbWFpbCI6ImFucGluZ29tQGRlbW8uY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2Mjk4ODc5MCwiZXhwIjoxNzYzMDc1MTkwfQ.uSyCyIqdb5b7inq0c1Qa6oxnFQFcQEz4GO07QOZLTF4"
 }
 
 ## GET    /api/auth/me                - Obtener usuario actual
 
-Ejemplo: Se envie una solicitud GET, se ajustan los Headers de Authorization y debe ponerse Bearer "Token Actualizado"
+Test: Se envie una solicitud GET, se ajustan los Headers de Authorization y debe ponerse Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhOWVlNmVjNC0yOGYzLTRlNTgtYTBjNi1kYWIzOGVmZjU2YjgiLCJlbWFpbCI6ImFucGluZ29tQGRlbW8uY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2Mjk4ODc5MCwiZXhwIjoxNzYzMDc1MTkwfQ.uSyCyIqdb5b7inq0c1Qa6oxnFQFcQEz4GO07QOZLTF4
 
-POST   /api/auth/change-password   - Cambiar contraseña
+## POST   /api/auth/change-password   - Cambiar contraseña
+
+Test: 
+
+headers.Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhOWVlNmVjNC0yOGYzLTRlNTgtYTBjNi1kYWIzOGVmZjU2YjgiLCJlbWFpbCI6ImFucGluZ29tQGRlbW8uY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2Mjk4ODc5MCwiZXhwIjoxNzYzMDc1MTkwfQ.uSyCyIqdb5b7inq0c1Qa6oxnFQFcQEz4GO07QOZLTF4
+
+{
+    "currentPassword" : "Admin123!",
+    "newPassword" : "Admin321!"
+}
+
 ```
 ### Google OAuth
 
