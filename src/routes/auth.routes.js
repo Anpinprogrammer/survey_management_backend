@@ -10,12 +10,12 @@ const registerValidation = [
   body('email')
     .isEmail()
     .normalizeEmail()
-    .withMessage('Valid email is required'),
+    .withMessage('Se requiere un email valido'),
   body('password')
     .isLength({ min: 8 })
-    .withMessage('Password must be at least 8 characters')
+    .withMessage('La contraseña debe contener al menos 8 caracteres')
     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/)
-    .withMessage('Password must contain at least one uppercase letter, one lowercase letter, and one number'),
+    .withMessage('La contraseña debe contener al menos una letra mayuscula, una letra minuscula y un numero'),
   body('fullName')
     .trim()
     .notEmpty()

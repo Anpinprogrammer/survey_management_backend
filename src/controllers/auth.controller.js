@@ -15,21 +15,23 @@ class AuthController {
       
       const { email, password, fullName, organizationId } = req.body;
       
-      const result = await authService.registroSeque({
-        email,
-        password,
-        fullName,
-        organizationId,
-      });
-
       /**
-       * const result = await authService.register({
+       * const result = await authService.registroSeque({
         email,
         password,
         fullName,
         organizationId,
       });
        */
+      
+
+      const result = await authService.register({
+        email,
+        password,
+        fullName,
+        organizationId,
+      });
+       
       
       
       res.status(201).json({
